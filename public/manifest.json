@@ -1,0 +1,10 @@
+{
+  "name": "Portal Bootstrap Template",
+  "short_name": "Portal",
+  "description": "A TanStack Start application",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": []
+}
