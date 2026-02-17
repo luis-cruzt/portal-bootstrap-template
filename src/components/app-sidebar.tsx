@@ -46,7 +46,7 @@ import { Link, useRouter, useRouterState } from '@tanstack/react-router'
 import { useTheme } from 'next-themes'
 
 const navItems = [
-  { title: 'Dashboard', to: '/dashboard', icon: IconDashboard },
+  { title: 'Home', to: '/dashboard', icon: IconDashboard },
 ] as const
 
 export function AppSidebar() {
