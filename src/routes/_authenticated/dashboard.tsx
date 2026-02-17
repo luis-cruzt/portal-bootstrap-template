@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { IconSearch } from '@tabler/icons-react'
+import { IconPalette, IconSearch } from '@tabler/icons-react'
 import { createFileRoute, Link } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/_authenticated/dashboard')({
@@ -37,6 +37,22 @@ function Dashboard() {
           <CardContent>
             <Button asChild>
               <Link to="/dashboard">Explore Features</Link>
+            </Button>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <IconPalette className="size-5" />
+              Theme customizer
+            </CardTitle>
+            <CardDescription>
+              Customize the look and feel of your dashboard with the theme customizer.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button asChild>
+              <Link to="/theme-customizer">Explore Theme Customizer</Link>
             </Button>
           </CardContent>
         </Card>
