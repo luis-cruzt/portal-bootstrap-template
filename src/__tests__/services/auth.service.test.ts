@@ -17,7 +17,7 @@ describe('authService', () => {
 
   describe('login', () => {
     it('calls loginFn with credentials', async () => {
-      const mockResponse = { success: true }
+      const mockResponse = { success: true } as const
       vi.mocked(loginFn).mockResolvedValue(mockResponse)
 
       const credentials = { phone: '+12345678901', password: 'password123' }
@@ -30,7 +30,7 @@ describe('authService', () => {
 
   describe('logout', () => {
     it('calls logoutFn', async () => {
-      const mockResponse = { success: true }
+      const mockResponse = { success: true } as const
       vi.mocked(logoutFn).mockResolvedValue(mockResponse)
 
       const result = await authService.logout()

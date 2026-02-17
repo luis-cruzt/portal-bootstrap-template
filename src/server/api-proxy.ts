@@ -25,8 +25,8 @@ export const apiProxyFn = createServerFn({ method: 'POST' })
       method: requestData.method,
       url: `${API_BASE_URL}${requestData.path}`,
       headers: { Authorization: `Bearer ${accessToken}` },
-      ...(requestData.data && { data: requestData.data }),
-      ...(requestData.params && { params: requestData.params }),
+      data: requestData.data,
+      params: requestData.params,
     })
 
     return response.data.data

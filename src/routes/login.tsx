@@ -44,7 +44,7 @@ function LoginPage() {
     const result = loginSchema.safeParse(rawData)
     if (!result.success) {
       const fieldErrors: Partial<z.infer<typeof loginSchema>> = {}
-      result.error.errors.forEach((err) => {
+      result.error.issues.forEach((err) => {
         const field = err.path[0] as keyof z.infer<typeof loginSchema>
         fieldErrors[field] = err.message as never
       })
