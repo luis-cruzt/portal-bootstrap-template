@@ -104,6 +104,7 @@ export function AppSidebar() {
                   <SidebarMenuButton
                     isActive={routerState.location.pathname === item.to || routerState.location.pathname.startsWith(item.to + '/')}
                     tooltip={item.title}
+                    asChild
                   >
                     <Link to={item.to}>
                       <item.icon />
