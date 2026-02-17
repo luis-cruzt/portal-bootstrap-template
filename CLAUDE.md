@@ -42,13 +42,13 @@ When making new API calls, always use `apiClient` from `@/lib/api-client`, never
 
 Routes live in `src/routes/`. TanStack Router auto-generates `src/routeTree.gen.ts` — don't edit that file by hand.
 
-| Convention | Meaning |
-|---|---|
-| `__root.tsx` | Root layout (providers, HTML shell) |
+| Convention           | Meaning                                         |
+| -------------------- | ----------------------------------------------- |
+| `__root.tsx`         | Root layout (providers, HTML shell)             |
 | `_authenticated.tsx` | Layout route; `beforeLoad` enforces auth + role |
-| `_authenticated/` | All files here are protected automatically |
-| `index.tsx` | Handles `/`, redirects based on auth state |
-| `login.tsx` | Public login page |
+| `_authenticated/`    | All files here are protected automatically      |
+| `index.tsx`          | Handles `/`, redirects based on auth state      |
+| `login.tsx`          | Public login page                               |
 
 When adding a protected page: create `src/routes/_authenticated/<name>.tsx`. No extra auth wiring needed.
 

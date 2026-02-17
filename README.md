@@ -24,23 +24,23 @@ A modern, production-ready full-stack React application template built with TanS
 
 ## Stack
 
-| Layer | Technology |
-|---|---|
-| Framework | [TanStack Start](https://tanstack.com/start) ^1.132.0 |
-| Router | [TanStack Router](https://tanstack.com/router) ^1.132.0 |
-| Server state | [TanStack Query](https://tanstack.com/query) ^5.90.20 |
-| UI | React 19.2.0 |
-| Language | TypeScript 5.7+ (strict) |
-| Build | Vite 7+ |
-| Server engine | Nitro |
-| Styling | Tailwind CSS 4.0+ |
-| Components | Shadcn/UI + Radix UI |
-| Icons | Lucide React |
-| Themes | next-themes |
-| Toasts | Sonner |
-| HTTP client | Axios |
-| Validation | Zod |
-| Testing | Vitest + Testing Library |
+| Layer         | Technology                                              |
+| ------------- | ------------------------------------------------------- |
+| Framework     | [TanStack Start](https://tanstack.com/start) ^1.132.0   |
+| Router        | [TanStack Router](https://tanstack.com/router) ^1.132.0 |
+| Server state  | [TanStack Query](https://tanstack.com/query) ^5.90.20   |
+| UI            | React 19.2.0                                            |
+| Language      | TypeScript 5.7+ (strict)                                |
+| Build         | Vite 7+                                                 |
+| Server engine | Nitro                                                   |
+| Styling       | Tailwind CSS 4.0+                                       |
+| Components    | Shadcn/UI + Radix UI                                    |
+| Icons         | Lucide React                                            |
+| Themes        | next-themes                                             |
+| Toasts        | Sonner                                                  |
+| HTTP client   | Axios                                                   |
+| Validation    | Zod                                                     |
+| Testing       | Vitest + Testing Library                                |
 
 ---
 
@@ -125,6 +125,7 @@ NODE_ENV=development
 ```
 
 > The `SESSION_SECRET` must be at least 32 characters. Generate one with:
+>
 > ```bash
 > openssl rand -base64 32
 > ```
@@ -173,13 +174,13 @@ Browser                 TanStack Start Server          Backend API
 
 ### Server functions
 
-| Function | Method | Description |
-|---|---|---|
-| `loginFn` | POST | Authenticate, store session |
-| `logoutFn` | POST | Clear session cookie |
-| `getCurrentUserFn` | GET | Read + validate session |
-| `hasRequiredRoleFn` | GET | Check role (ADMIN=2, SUPPORT=4) |
-| `apiProxyFn` | POST | Proxy requests with auth header |
+| Function            | Method | Description                     |
+| ------------------- | ------ | ------------------------------- |
+| `loginFn`           | POST   | Authenticate, store session     |
+| `logoutFn`          | POST   | Clear session cookie            |
+| `getCurrentUserFn`  | GET    | Read + validate session         |
+| `hasRequiredRoleFn` | GET    | Check role (ADMIN=2, SUPPORT=4) |
+| `apiProxyFn`        | POST   | Proxy requests with auth header |
 
 ### Session configuration
 
@@ -239,16 +240,16 @@ npx shadcn@latest add avatar
 
 ## Scripts
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start dev server on port 3001 |
-| `npm run build` | Production build |
-| `npm run preview` | Preview production build |
-| `npm test` | Run tests once |
-| `npm run test:watch` | Run tests in watch mode |
-| `npm run lint` | Lint with ESLint |
-| `npm run format` | Format with Prettier |
-| `npm run check` | Format + lint fix |
+| Command              | Description                   |
+| -------------------- | ----------------------------- |
+| `npm run dev`        | Start dev server on port 3001 |
+| `npm run build`      | Production build              |
+| `npm run preview`    | Preview production build      |
+| `npm test`           | Run tests once                |
+| `npm run test:watch` | Run tests in watch mode       |
+| `npm run lint`       | Lint with ESLint              |
+| `npm run format`     | Format with Prettier          |
+| `npm run check`      | Format + lint fix             |
 
 ---
 

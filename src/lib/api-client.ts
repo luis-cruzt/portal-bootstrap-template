@@ -8,13 +8,21 @@ const apiClient = {
     }) as Promise<T>
   },
 
-  async post<T>(path: string, data?: unknown, options?: RequestOptions): Promise<T> {
+  async post<T>(
+    path: string,
+    data?: unknown,
+    options?: RequestOptions,
+  ): Promise<T> {
     return apiProxyFn({
       data: { method: 'POST', path, data, params: options?.params },
     }) as Promise<T>
   },
 
-  async patch<T>(path: string, data?: unknown, options?: RequestOptions): Promise<T> {
+  async patch<T>(
+    path: string,
+    data?: unknown,
+    options?: RequestOptions,
+  ): Promise<T> {
     return apiProxyFn({
       data: { method: 'PATCH', path, data, params: options?.params },
     }) as Promise<T>

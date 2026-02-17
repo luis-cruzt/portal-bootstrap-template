@@ -26,13 +26,8 @@ export function useUpdateSupportTicket() {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: ({
-      id,
-      data,
-    }: {
-      id: string
-      data: Record<string, unknown>
-    }) => supportService.updateTicket(id, data),
+    mutationFn: ({ id, data }: { id: string; data: Record<string, unknown> }) =>
+      supportService.updateTicket(id, data),
     onSuccess: (_data, { id }) => {
       queryClient.invalidateQueries({ queryKey: supportKeys.ticket(id) })
       queryClient.invalidateQueries({ queryKey: supportKeys.tickets() })
