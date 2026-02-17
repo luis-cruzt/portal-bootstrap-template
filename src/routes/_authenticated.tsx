@@ -20,12 +20,12 @@ export const Route = createFileRoute('/_authenticated')({
     const user = await getCurrentUserFn()
     const hasRole = await hasRequiredRoleFn()
 
-    // if (!user || !hasRole) {
-    //   throw redirect({
-    //     to: '/login',
-    //     search: { redirect: location.href },
-    //   })
-    // }
+    if (!user || !hasRole) {
+      throw redirect({
+        to: '/login',
+        search: { redirect: location.href },
+      })
+    }
 
     return { user }
   },
