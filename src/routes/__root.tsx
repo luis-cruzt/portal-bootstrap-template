@@ -1,13 +1,12 @@
-import {
-  HeadContent,
-  Scripts,
-  createRootRoute,
-  Outlet,
-} from '@tanstack/react-router'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ThemeProvider } from 'next-themes'
 import { Toaster } from '@/components/ui/sonner'
 import '@/styles.css'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import {
+  createRootRoute,
+  HeadContent,
+  Scripts
+} from '@tanstack/react-router'
+import { ThemeProvider } from 'next-themes'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,7 +27,7 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
         <HeadContent />
       </head>
@@ -44,11 +43,3 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     </html>
   )
 }
-
-function RootComponent() {
-  return <Outlet />
-}
-
-Route.update({
-  component: RootComponent,
-})
