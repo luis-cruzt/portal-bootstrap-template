@@ -45,44 +45,33 @@ function LoginPage() {
     }
 
     setLoading(true)
-    
+
     try {
-      const cleanPayload: Record<string, string> = {
-        password: formData.password,
-      }
+      const cleanPayload: { email?: string; phone?: string; password: string } =
+        {
+          password: formData.password,
+        }
       if (loginMode === 'email' && formData.email) {
         cleanPayload.email = formData.email
       } else if (loginMode === 'phone' && formData.phone) {
         cleanPayload.phone = formData.phone
       }
 
-      // Use server function for login
-      // Note: On success, this throws a redirect (doesn't return)
-      // On error, it returns an object with error property
-      const response = await loginFn({
-        data: cleanPayload as { email?: string; phone?: string; password: string },
-      })
-      
-      // If we reach here, there was an error (successful login redirects)
-      if (response?.error) {
-        setError(response.error)
-        setLoading(false)
-      }
+      const response = await loginFn({ data: cleanPayload })
 
       if (response?.success) {
         await router.navigate({ to: '/dashboard' })
       }
-    } catch (err) {
-      // The redirect throws, but we shouldn't catch it
-      // Just let it propagate - TanStack Router will handle it
-      throw err
+    } catch {
+      setError('Invalid credentials. Please try again.')
+      setLoading(false)
     }
   }
 
   return (
     <div className="bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
       <div className="flex w-full max-w-sm flex-col gap-6">
-         <a href="#" className="flex items-center gap-2 self-center font-medium">
+        <a href="#" className="flex items-center gap-2 self-center font-medium">
           Portal Bootstrap Template
         </a>
         <div className="flex flex-col gap-6">
