@@ -1,7 +1,4 @@
-import {
-  Avatar,
-  AvatarFallback,
-} from '@/components/ui/avatar'
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -39,14 +36,16 @@ import {
   IconHeadset,
   IconLogout,
   IconMoon,
+  IconPalette,
   IconSelector,
-  IconSun
+  IconSun,
 } from '@tabler/icons-react'
 import { Link, useRouter, useRouterState } from '@tanstack/react-router'
 import { useTheme } from 'next-themes'
 
 const navItems = [
   { title: 'Home', to: '/dashboard', icon: IconDashboard },
+  { title: 'Theme', to: '/theme-customizer', icon: IconPalette },
 ] as const
 
 export function AppSidebar() {
@@ -66,19 +65,14 @@ export function AppSidebar() {
     }
   }
 
-  const initials = user?.phone
-    ? user.phone.slice(-2).toUpperCase()
-    : 'CS'
+  const initials = user?.phone ? user.phone.slice(-2).toUpperCase() : 'CS'
 
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton
-              size="lg"
-              asChild
-            >
+            <SidebarMenuButton size="lg" asChild>
               <Link to="/dashboard">
                 <Button size="icon-sm" asChild className="size-8">
                   <span>
@@ -102,7 +96,10 @@ export function AppSidebar() {
               {navItems.map((item) => (
                 <SidebarMenuItem key={item.to}>
                   <SidebarMenuButton
-                    isActive={routerState.location.pathname === item.to || routerState.location.pathname.startsWith(item.to + '/')}
+                    isActive={
+                      routerState.location.pathname === item.to ||
+                      routerState.location.pathname.startsWith(item.to + '/')
+                    }
                     tooltip={item.title}
                     asChild
                   >
@@ -127,7 +124,9 @@ export function AppSidebar() {
                   className="data-open:bg-sidebar-accent data-open:text-sidebar-accent-foreground"
                 >
                   <Avatar>
-                    <AvatarFallback className="rounded-lg">{initials}</AvatarFallback>
+                    <AvatarFallback className="rounded-lg">
+                      {initials}
+                    </AvatarFallback>
                   </Avatar>
                   <div className="grid flex-1 text-left text-sm leading-tight">
                     <span className="truncate font-medium">Support Agent</span>
@@ -154,7 +153,9 @@ export function AppSidebar() {
                       </ItemMedia>
                       <ItemContent>
                         <ItemTitle>Support Agent</ItemTitle>
-                        <ItemDescription>{user?.phone ?? 'Unknown'}</ItemDescription>
+                        <ItemDescription>
+                          {user?.phone ?? 'Unknown'}
+                        </ItemDescription>
                       </ItemContent>
                     </Item>
                   </DropdownMenuLabel>
