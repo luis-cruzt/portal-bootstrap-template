@@ -5,7 +5,7 @@ export interface ApiResponse<T = unknown> {
 }
 
 export interface PaginatedResponse<T = unknown> {
-  data: T[]
+  data: Array<T>
   total: number
   page: number
   limit: number

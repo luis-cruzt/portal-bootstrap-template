@@ -1,3 +1,4 @@
+import type { RadiusOption, ThemePreset } from '@/types/theme'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -8,7 +9,6 @@ import {
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import type { RadiusOption, ThemePreset } from '@/types/theme'
 import { cn } from '@/lib/utils'
 
 function buildStyleOverrides(

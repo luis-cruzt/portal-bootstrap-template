@@ -15,7 +15,7 @@ export const supportService = {
    * Fetch paginated list of support tickets.
    */
   async getTickets(params?: Record<string, string | number>) {
-    return apiClient.get<SupportTicket[]>('/support/tickets', { params })
+    return apiClient.get<Array<SupportTicket>>('/support/tickets', { params })
   },
 
   /**

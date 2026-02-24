@@ -1,8 +1,8 @@
 import { createServerFn } from '@tanstack/react-start'
-import { useAppSession } from '@/utils/session'
 import axios from 'axios'
 import { jwtDecode } from 'jwt-decode'
 import type { LoginRequest, TokenPayload } from '@/types/auth'
+import { useAppSession } from '@/utils/session'
 
 const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:3000/api/v1'
 

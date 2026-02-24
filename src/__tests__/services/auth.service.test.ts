@@ -1,4 +1,7 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+
+import { authService } from '@/services/auth.service'
+import { getCurrentUserFn, loginFn, logoutFn } from '@/server/auth'
 
 // Mock the server functions before importing the service
 vi.mock('@/server/auth', () => ({
@@ -6,9 +9,6 @@ vi.mock('@/server/auth', () => ({
   logoutFn: vi.fn(),
   getCurrentUserFn: vi.fn(),
 }))
-
-import { authService } from '@/services/auth.service'
-import { loginFn, logoutFn, getCurrentUserFn } from '@/server/auth'
 
 describe('authService', () => {
   beforeEach(() => {

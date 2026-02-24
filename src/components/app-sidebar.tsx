@@ -1,3 +1,14 @@
+import {
+  IconDashboard,
+  IconHeadset,
+  IconLogout,
+  IconMoon,
+  IconPalette,
+  IconSelector,
+  IconSun,
+} from '@tabler/icons-react'
+import { Link, useRouter, useRouterState } from '@tanstack/react-router'
+import { useTheme } from 'next-themes'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import {
@@ -31,17 +42,6 @@ import {
 } from '@/components/ui/sidebar'
 import { Route as AuthenticatedRoute } from '@/routes/_authenticated'
 import { logoutFn } from '@/server/auth'
-import {
-  IconDashboard,
-  IconHeadset,
-  IconLogout,
-  IconMoon,
-  IconPalette,
-  IconSelector,
-  IconSun,
-} from '@tabler/icons-react'
-import { Link, useRouter, useRouterState } from '@tanstack/react-router'
-import { useTheme } from 'next-themes'
 
 const navItems = [
   { title: 'Home', to: '/dashboard', icon: IconDashboard },

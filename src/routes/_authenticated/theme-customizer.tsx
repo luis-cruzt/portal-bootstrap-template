@@ -1,9 +1,10 @@
-import { useState, useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
+import type { RadiusOption } from '@/types/theme'
 import {
-  themePresets,
-  radiusOptions,
   generateStylesCss,
+  radiusOptions,
+  themePresets,
 } from '@/lib/theme-presets'
 import { generateCustomTheme, hexToHue } from '@/lib/theme-generator'
 import { ThemePreview } from '@/components/theme-customizer/theme-preview'
@@ -11,7 +12,6 @@ import { ThemePresetPicker } from '@/components/theme-customizer/theme-preset-pi
 import { CustomColorPicker } from '@/components/theme-customizer/custom-color-picker'
 import { RadiusPicker } from '@/components/theme-customizer/radius-picker'
 import { CssOutput } from '@/components/theme-customizer/css-output'
-import type { RadiusOption } from '@/types/theme'
 
 export const Route = createFileRoute('/_authenticated/theme-customizer')({
   component: ThemeCustomizerPage,

@@ -1,5 +1,5 @@
-import { loginFn, logoutFn, getCurrentUserFn } from '@/server/auth'
 import type { LoginRequest } from '@/types/auth'
+import { getCurrentUserFn, loginFn, logoutFn } from '@/server/auth'
 
 export const authService = {
   /**

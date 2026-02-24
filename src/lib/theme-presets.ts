@@ -1,4 +1,4 @@
-import type { ThemePreset, ThemeVariables, RadiusOption } from '@/types/theme'
+import type { RadiusOption, ThemePreset, ThemeVariables } from '@/types/theme'
 
 const defaultLight: ThemeVariables = {
   background: 'oklch(1 0 0)',
@@ -68,7 +68,7 @@ const defaultDark: ThemeVariables = {
   'sidebar-ring': 'oklch(0.551 0.027 264.364)',
 }
 
-export const themePresets: ThemePreset[] = [
+export const themePresets: Array<ThemePreset> = [
   {
     name: 'Default',
     id: 'default',
@@ -575,7 +575,7 @@ export const themePresets: ThemePreset[] = [
   },
 ]
 
-export const radiusOptions: RadiusOption[] = [0, 0.3, 0.5, 0.75, 1.0]
+export const radiusOptions: Array<RadiusOption> = [0, 0.3, 0.5, 0.75, 1.0]
 
 export function generateStylesCss(
   preset: ThemePreset,

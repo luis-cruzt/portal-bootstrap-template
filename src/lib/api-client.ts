@@ -1,5 +1,5 @@
-import { apiProxyFn } from '@/server/api-proxy'
 import type { RequestOptions } from '@/types/api'
+import { apiProxyFn } from '@/server/api-proxy'
 
 const apiClient = {
   async get<T>(path: string, options?: RequestOptions): Promise<T> {

@@ -1,9 +1,9 @@
+import type { ThemePreset } from '@/types/theme'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import type { ThemePreset } from '@/types/theme'
 
 interface ThemePresetPickerProps {
-  presets: ThemePreset[]
+  presets: Array<ThemePreset>
   selectedId: string
   onSelect: (presetId: string) => void
   onSelectCustom: () => void

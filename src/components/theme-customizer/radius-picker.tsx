@@ -1,9 +1,9 @@
+import type { RadiusOption } from '@/types/theme'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import type { RadiusOption } from '@/types/theme'
 
 interface RadiusPickerProps {
-  options: RadiusOption[]
+  options: Array<RadiusOption>
   selected: RadiusOption
   onSelect: (radius: RadiusOption) => void
 }

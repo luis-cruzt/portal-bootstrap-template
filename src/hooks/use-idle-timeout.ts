@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 
 interface UseIdleTimeoutOptions {
   /** Idle timeout duration in milliseconds */
@@ -6,7 +6,7 @@ interface UseIdleTimeoutOptions {
   /** Callback to invoke when user becomes idle */
   onIdle: () => void
   /** List of events that reset the idle timer */
-  events?: string[]
+  events?: Array<string>
 }
 
 const DEFAULT_EVENTS = [

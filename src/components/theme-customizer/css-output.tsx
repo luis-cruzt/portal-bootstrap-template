@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { toast } from 'sonner'
-import { Copy, Check } from 'lucide-react'
+import { Check, Copy } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 interface CssOutputProps {

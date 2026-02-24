@@ -2,7 +2,7 @@ import type { ThemePreset, ThemeVariable, ThemeVariables } from '@/types/theme'
 import { themePresets } from '@/lib/theme-presets'
 
 /** Variables that should keep the custom hue with full chroma */
-const chromaticVars: ThemeVariable[] = [
+const chromaticVars: Array<ThemeVariable> = [
   'primary',
   'primary-foreground',
   'ring',
@@ -17,7 +17,7 @@ const chromaticVars: ThemeVariable[] = [
 ]
 
 /** Variables that should stay untouched (destructive, opacity-based borders) */
-const preserveVars: ThemeVariable[] = ['destructive']
+const preserveVars: Array<ThemeVariable> = ['destructive']
 
 /** OKLCH string pattern: oklch(L C H) or oklch(L C H / alpha%) */
 const oklchRegex = /^oklch\((\d+\.?\d*)\s+(\d+\.?\d*)\s+(\d+\.?\d*)(.*)\)$/
@@ -45,7 +45,7 @@ function transformVariables(
 ): ThemeVariables {
   const result = { ...source }
 
-  for (const key of Object.keys(result) as ThemeVariable[]) {
+  for (const key of Object.keys(result) as Array<ThemeVariable>) {
     if (preserveVars.includes(key)) continue
 
     const value = result[key]
